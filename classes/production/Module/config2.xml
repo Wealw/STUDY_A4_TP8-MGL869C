@@ -5,14 +5,14 @@
 	<feature automatic="selected" name="Bench"/>
 	<feature automatic="selected" name="Graph"/>
 	<feature automatic="unselected" name="Directed"/>
-	<feature automatic="selected" manual="selected" name="Undirected"/>
+	<feature manual="selected" name="Undirected"/>
 	<feature name="Weighted"/>
 	<feature automatic="selected" manual="selected" name="Search"/>
 	<feature automatic="selected" manual="selected" name="DFS"/>
 	<feature automatic="unselected" name="BFS"/>
 	<feature automatic="selected" name="Algorithms"/>
 	<feature name="Number"/>
-	<feature manual="selected" name="Connected"/>
+	<feature name="Connected"/>
 	<feature automatic="unselected" name="StronglyConnected"/>
 	<feature manual="selected" name="Cycle"/>
 	<feature name="MSTPrim"/>

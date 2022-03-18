@@ -48,17 +48,11 @@ public class CycleWorkSpace extends WorkSpace {
 	        // the father, if it is the father the difference in the VertexCount is
 	        // only one.                                   
 	       
-	    	// @feature DIRECTED
-	    	if (Main.DIRECTED) 
-	            if (vsource.VertexColor==GRAY && vtarget.VertexColor==GRAY) anyCycles = true;
-	        // ---
-	    	
-	    	// @feature UNDIRECTED
-	    	if (Main.UNDIRECTED)
-	            if (vsource.VertexColor==GRAY && vtarget.VertexColor==GRAY 
-	            		&& vsource.VertexCycle!=(vtarget.VertexCycle+1)) 
-	                anyCycles = true;
-	    	// ---
+            if (vsource.VertexColor==GRAY && vtarget.VertexColor==GRAY) anyCycles = true;
+    	
+            if (vsource.VertexColor==GRAY && vtarget.VertexColor==GRAY 
+            		&& vsource.VertexCycle!=(vtarget.VertexCycle+1)) 
+                anyCycles = true;
 	    		        
 	    } // of checkNeighborAction
 	    

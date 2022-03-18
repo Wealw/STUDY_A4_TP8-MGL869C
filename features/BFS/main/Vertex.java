@@ -1,68 +1,28 @@
-package main; 
+package main;
 
-import java.util.LinkedList; 
+import java.util.LinkedList;
 
-public   class  Vertex {
-	
-    public LinkedList<Neighbor> neighbors;
-
-	
-    public String name;
-
-	
-	
-    public Vertex  () {
-        name      = null;
-        neighbors = new LinkedList<Neighbor>();
-    
-        visited = false;
-    }
-
-	
-    
-    public  Vertex assignName( String name ) {
-        this.name = name;
-        return this;
-    }
-
-	
-   
-    public void addNeighbor( Neighbor n ) {
-        neighbors.add( n );
-    }
-
-	
-
-    public boolean equals(Object o) {
-    	boolean result = false;
-    	    	if (!(o instanceof Vertex)) return result;
-    	Vertex v = (Vertex) o;
-    	if (v.name==this.name) result = true;
-    	return result;
-    }
-
-	 // weight so far from s to it
-	
-	public void display  () {
-    	System.out.print( "Pred " + predecessor + " DWeight " + dweight + " " );
-        System.out.println();
-	}
-
-	
+public class Vertex {
 	
     public boolean visited;
-
-	
     static LinkedList<Vertex> Queue =  new LinkedList<Vertex>();
-
 	
+    public Vertex() {
+        visited = false;
+    }
+    
+    public void display() {
+	   	if ( visited )
+	        System.out.print( "  visited " );
+	    else
+	        System.out.println( " !visited " );
+        System.out.println();
+    }
     
     public void init_vertex( WorkSpace w ) {
         visited = false;
         w.init_vertex(this);
     }
-
-	
     
     public void bftNodeSearch( WorkSpace w ) {
         Vertex  v;
@@ -98,15 +58,4 @@ public   class  Vertex {
         } // while there is a vertex pending to visit
                   
     }
-
-	
-    public int VertexNumber;
-
-	
-    public String predecessor;
-
-	 // the name of the predecessor if any
-    public int dweight;
-
-
 }

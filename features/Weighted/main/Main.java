@@ -1,13 +1,12 @@
-package main; 
+package main;
 
-import java.io.IOException; 
+import java.io.IOException;
 
-public   class  Main {
-		
-	
-	static StringBuffer configuration = new StringBuffer();
-
-	
+public class Main {
+	private static void displayConfigurationValues() {
+		configuration.append("WEIGHTED ");
+		original();
+	}
 	
 	/** Definition of arguments
 	 * [0] Name of Benchmark file
@@ -96,45 +95,4 @@ public   class  Main {
             
         Graph.endProfile();
     }
-
-	
-
-	/**
-	 * Shows the names of the selected features
-	 */
-	 private static void  displayConfigurationValues__wrappee__Prog  () {
-		System.out.println("Input configuration: " + configuration);
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__Bench  () {
-		configuration.append("BENCH ");
-		displayConfigurationValues__wrappee__Prog();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__Directed  () {
-		configuration.append("DIRECTED ");
-		displayConfigurationValues__wrappee__Bench();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__Weighted  () {
-		configuration.append("WEIGHTED ");
-		displayConfigurationValues__wrappee__Directed();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__BFS  () {
-		configuration.append("BFS ");
-		displayConfigurationValues__wrappee__Weighted();
-	}
-
-	
-	private static void displayConfigurationValues() {
-		configuration.append("SHORTESTPATH ");
-		displayConfigurationValues__wrappee__BFS();
-	}
-
-
 }

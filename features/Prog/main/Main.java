@@ -1,13 +1,21 @@
-package main; 
+/**
+ * GPL Example
+ * Runtime variability and monolithic implementation
+ * @author Roberto E. Lopez-Herrejon
+ * ETS-LOGTI
+ */
+package main;
 
-import java.io.IOException; 
+import java.io.IOException;
 
-public   class  Main {
-		
+/**
+ * Main class for GPL example
+ * @author Roberto E. Lopez-Herrejon
+ * @feature Prog 
+ */
+public class Main {	
 	
 	static StringBuffer configuration = new StringBuffer();
-
-	
 	
 	/** Definition of arguments
 	 * [0] Name of Benchmark file
@@ -47,9 +55,6 @@ public   class  Main {
         int startVertices[] = new int[num_edges];
         int endVertices[] = new int[num_edges];
         
-        // @feature WEIGHTED selected
-        int weights[] = new int[num_edges];
-        
         // Step 5: creates the vertices objects 
         int i=0;
         for ( i=0; i<num_vertices; i++ ) {
@@ -69,19 +74,12 @@ public   class  Main {
         }
         
         // Step 7: reads the weights
-    	try {
-    		for( i=0; i<num_edges; i++ ) weights[i] = g.readNumber();
-    	}catch ( IOException e ) {
-    	System.out.println("Error while reading the weigths");
-    	System.exit(0);
-    	}
-        
         // Stops the benchmark reading
         g.stopBenchmark();
          
         // Step 8: Adds the edges
         for ( i=0; i<num_edges; i++ ) {
-    		g.addAnEdge( V[startVertices[i]], V[endVertices[i]],weights[i] );
+    		g.addAnEdge( V[startVertices[i]], V[endVertices[i]]);
         }
      
         // Executes the selected features
@@ -97,44 +95,10 @@ public   class  Main {
         Graph.endProfile();
     }
 
-	
-
 	/**
 	 * Shows the names of the selected features
 	 */
-	 private static void  displayConfigurationValues__wrappee__Prog  () {
+	private static void displayConfigurationValues() {
 		System.out.println("Input configuration: " + configuration);
 	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__Bench  () {
-		configuration.append("BENCH ");
-		displayConfigurationValues__wrappee__Prog();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__Directed  () {
-		configuration.append("DIRECTED ");
-		displayConfigurationValues__wrappee__Bench();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__Weighted  () {
-		configuration.append("WEIGHTED ");
-		displayConfigurationValues__wrappee__Directed();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__BFS  () {
-		configuration.append("BFS ");
-		displayConfigurationValues__wrappee__Weighted();
-	}
-
-	
-	private static void displayConfigurationValues() {
-		configuration.append("SHORTESTPATH ");
-		displayConfigurationValues__wrappee__BFS();
-	}
-
-
 }
