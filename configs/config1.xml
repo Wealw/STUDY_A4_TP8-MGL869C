@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="GPLAntennav31"/>
+	<feature automatic="selected" name="Prog"/>
+	<feature automatic="selected" name="Bench"/>
+	<feature automatic="selected" name="Graph"/>
+	<feature manual="selected" name="Directed"/>
+	<feature automatic="unselected" name="Undirected"/>
+	<feature name="Weighted"/>
+	<feature automatic="selected" manual="selected" name="Search"/>
+	<feature automatic="selected" name="DFS"/>
+	<feature automatic="unselected" name="BFS"/>
+	<feature automatic="selected" name="Algorithms"/>
+	<feature name="Number"/>
+	<feature automatic="unselected" name="Connected"/>
+	<feature name="StronglyConnected"/>
+	<feature manual="selected" name="Cycle"/>
+	<feature automatic="unselected" name="MSTPrim"/>
+	<feature automatic="unselected" name="MSTKruskal"/>
+	<feature name="Shortestpath"/>
+</configuration>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="true"/>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<calculations key="constraints" value="true"/>
+		<graphics key="layoutalgorithm" value="1"/>
+		<calculations key="features" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="GPLAntennav31">
+			<feature mandatory="true" name="Prog"/>
+			<feature mandatory="true" name="Bench"/>
+			<alt mandatory="true" name="Graph">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Directed"/>
+				<feature name="Undirected"/>
+			</alt>
+			<feature name="Weighted"/>
+			<alt name="Search">
+				<graphics key="collapsed" value="false"/>
+				<feature name="DFS"/>
+				<feature name="BFS"/>
+			</alt>
+			<or mandatory="true" name="Algorithms">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Number"/>
+				<feature name="Connected"/>
+				<feature name="StronglyConnected"/>
+				<feature name="Cycle"/>
+				<feature name="MSTPrim"/>
+				<feature name="MSTKruskal"/>
+				<feature name="Shortestpath"/>
+			</or>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Number</var>
+				<var>Search</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Connected</var>
+				<var>Search</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Connected</var>
+				<var>Undirected</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>StronglyConnected</var>
+				<var>DFS</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>StronglyConnected</var>
+				<var>Directed</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Cycle</var>
+				<var>DFS</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MSTPrim</var>
+				<var>Undirected</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MSTPrim</var>
+				<var>Weighted</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MSTKruskal</var>
+				<var>Undirected</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MSTKruskal</var>
+				<var>Weighted</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Shortestpath</var>
+				<var>Directed</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Shortestpath</var>
+				<var>Weighted</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>MSTPrim</var>
+				<not>
+					<var>MSTKruskal</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
