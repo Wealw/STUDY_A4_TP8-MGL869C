@@ -13,11 +13,6 @@
 		<and abstract="true" mandatory="true" name="GPLAntennav31">
 			<feature mandatory="true" name="Prog"/>
 			<feature mandatory="true" name="Bench"/>
-			<alt mandatory="true" name="Graph">
-				<graphics key="collapsed" value="false"/>
-				<feature name="Directed"/>
-				<feature name="Undirected"/>
-			</alt>
 			<feature name="Weighted"/>
 			<alt name="Search">
 				<graphics key="collapsed" value="false"/>
@@ -34,6 +29,11 @@
 				<feature name="MSTKruskal"/>
 				<feature name="Shortestpath"/>
 			</or>
+			<alt mandatory="true" name="Graph">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Directed"/>
+				<feature name="Undirected"/>
+			</alt>
 		</and>
 	</struct>
 	<constraints>
@@ -119,7 +119,6 @@
 		</rule>
 	</constraints>
 	<featureOrder userDefined="true">
-		<feature name="Cycle"/>
 		<feature name="Prog"/>
 		<feature name="Bench"/>
 		<feature name="Weighted"/>
@@ -130,6 +129,7 @@
 		<feature name="Number"/>
 		<feature name="Connected"/>
 		<feature name="StronglyConnected"/>
+		<feature name="Cycle"/>
 		<feature name="MSTPrim"/>
 		<feature name="MSTKruskal"/>
 		<feature name="Shortestpath"/>

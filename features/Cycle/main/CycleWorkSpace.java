@@ -46,7 +46,7 @@ public class CycleWorkSpace extends WorkSpace {
 	    } // of checkNeighborAction
 	    
 	    public void aux_checkNeighborAction(int sourceColor, int targetColor, int sourceCycle, int targetCycle) {
-	    	original(sourceColor, targetColor, sourceCycle, targetCycle);
+
 	    }
 
 } // of CycleWorkSpace

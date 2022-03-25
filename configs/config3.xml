@@ -3,9 +3,6 @@
 	<feature automatic="selected" name="GPLAntennav31"/>
 	<feature automatic="selected" name="Prog"/>
 	<feature automatic="selected" name="Bench"/>
-	<feature automatic="selected" name="Graph"/>
-	<feature automatic="unselected" name="Directed"/>
-	<feature automatic="selected" name="Undirected"/>
 	<feature automatic="selected" name="Weighted"/>
 	<feature automatic="selected" manual="selected" name="Search"/>
 	<feature automatic="unselected" name="DFS"/>
@@ -18,4 +15,7 @@
 	<feature manual="selected" name="MSTPrim"/>
 	<feature automatic="unselected" name="MSTKruskal"/>
 	<feature automatic="unselected" name="Shortestpath"/>
+	<feature automatic="selected" name="Graph"/>
+	<feature automatic="unselected" name="Directed"/>
+	<feature automatic="selected" name="Undirected"/>
 </configuration>

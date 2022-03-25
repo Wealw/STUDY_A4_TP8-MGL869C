@@ -1,5 +1,8 @@
 package main; 
 
+// undirected and Directed have the same code
+
+
 import java.util.LinkedList; 
 
 public   class  Vertex {
@@ -41,19 +44,8 @@ public   class  Vertex {
     	return result;
     }
 
-	 // weight so far from s to it
 	
-	public void display  () {
-    	System.out.print( " Pred " + pred + " Key " + key + " " );
-        System.out.println();
-	}
-
-	
-	
-    public boolean visited;
-
-	
-    static LinkedList<Vertex> Queue =  new LinkedList<Vertex>();
+	public boolean visited;
 
 	
     
@@ -64,46 +56,43 @@ public   class  Vertex {
 
 	
     
-    public void bftNodeSearch( WorkSpace w ) {
-        Vertex  v;
-        Vertex  header;
-      
-        // Step 1: if preVisitAction is true or if we've already
-        //         visited this node
-        w.preVisitAction(this);               
+    public void dftNodeSearch( WorkSpace w ) {
+        Vertex v;
+
+        // Step 1: Do preVisitAction. 
+        // If we've already visited this node return
+        w.preVisitAction(this);
         if (visited) return;
 
-        // Step 2: Mark as visited, put the unvisited neighbors in the queue 
-        //     and make the recursive call on the first element of the queue
-        //     if there is such if not you are done
+        // Step 2: else remember that we've visited and 
+        //         visit all neighbors
         visited = true;
          
-        // Step 3: do postVisitAction now, you are no longer going through the
-        // node again, mark it as black
-        w.postVisitAction(this);
-
-        // enqueues the vertices not visited
         for (Neighbor n : neighbors) {
             v = n.end;
-
-            // if the neighbor has not been visited then enqueue 
-            if (!v.visited) Queue.add(v);                        
+            w.checkNeighborAction(this,v);
+            v.dftNodeSearch(w);
         }
-
-        // while there is something in the queue
-        while(Queue.size()!=0) {
-        	header = Queue.get(0);
-            Queue.remove(0);
-            header.bftNodeSearch( w );
-        } // while there is a vertex pending to visit
-                  
+             
+        // Step 3: do postVisitAction now
+        w.postVisitAction(this);
     }
 
 	
-    public String pred;
+    public int VertexCycle;
 
-	 // the predecessor vertex if any
-    public int key;
+	
+    public int VertexColor;
+
+	
+	public void display  () {
+		System.out.print( " Node " + name + " connected to: " );
+        for (Neighbor theNeighbor : neighbors) {
+            Vertex v = theNeighbor.end;
+            System.out.print( v.name + ", " );
+        }
+        System.out.println();
+	}
 
 
 }

@@ -1,8 +1,21 @@
+/**
+ * GPL Example
+ * Runtime variability and monolithic implementation
+ * @author Roberto E. Lopez-Herrejon
+ * ETS-LOGTI
+ */
 package main; 
 
-public 
+// Note: Code for UNDIRECTED and DIRECTED is the same.
 
-class  Edge  extends Neighbor {
+// *************************************************************************
+
+/**
+ * Class the represents the edges of the graph
+ * @author rlopez
+ *
+ */
+public  class  Edge  extends Neighbor {
 	
     public  Vertex start;
 
@@ -15,36 +28,19 @@ class  Edge  extends Neighbor {
     }
 
 	
-	
-    public void display  () {
+        
+    public void display() {
         System.out.print( " start=" + start.name + " end=" + end.name );
-        System.out.print( " Weight=" + weight );
         System.out.println();
+      
     }
 
-	
-    
-    public String toString  () {
-        String result = " start=" + start.name + " end=" + end.name + " weight=" + weight;
-        result = result + " weight=" + weight;
+	 
+     
+    public String toString() {
+        String result = " start=" + start.name + " end=" + end.name;
         return result;
     }
-
-	
-    public int weight;
-
-	
-	
-    public Edge( Vertex the_start,  Vertex the_end, int the_weight ) {
-    	this(the_start,the_end );
-        weight = the_weight;
-    }
-
-	
-	
-	public void adjustAdorns(Edge the_edge) {
-		weight = the_edge.weight;
-	}
 
 
 }

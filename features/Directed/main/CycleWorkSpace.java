@@ -8,9 +8,8 @@ package main;
 
 // @feature CYCLE
 public class CycleWorkSpace extends WorkSpace{	     
-	   public boolean anyCycles;
-	    public static final int GRAY  = 1;
     public void aux_checkNeighborAction(int sourceColor, int targetColor, int sourceCycle, int targetCycle) {
+    	original(sourceColor, targetColor, sourceCycle, targetCycle);
     	if (sourceColor==GRAY && targetColor==GRAY) anyCycles = true;
     }
 } // of CycleWorkSpace

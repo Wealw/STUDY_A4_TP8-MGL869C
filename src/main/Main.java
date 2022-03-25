@@ -47,9 +47,6 @@ public   class  Main {
         int startVertices[] = new int[num_edges];
         int endVertices[] = new int[num_edges];
         
-        // @feature WEIGHTED selected
-        int weights[] = new int[num_edges];
-        
         // Step 5: creates the vertices objects 
         int i=0;
         for ( i=0; i<num_vertices; i++ ) {
@@ -69,19 +66,12 @@ public   class  Main {
         }
         
         // Step 7: reads the weights
-    	try {
-    		for( i=0; i<num_edges; i++ ) weights[i] = g.readNumber();
-    	}catch ( IOException e ) {
-    	System.out.println("Error while reading the weigths");
-    	System.exit(0);
-    	}
-        
         // Stops the benchmark reading
         g.stopBenchmark();
          
         // Step 8: Adds the edges
         for ( i=0; i<num_edges; i++ ) {
-    		g.addAnEdge( V[startVertices[i]], V[endVertices[i]],weights[i] );
+    		g.addAnEdge( V[startVertices[i]], V[endVertices[i]]);
         }
      
         // Executes the selected features
@@ -113,27 +103,21 @@ public   class  Main {
 	}
 
 	
-	 private static void  displayConfigurationValues__wrappee__Undirected  () {
-		configuration.append("UNDIRECTED ");
+	 private static void  displayConfigurationValues__wrappee__DFS  () {
+		configuration.append("DFS ");
 		displayConfigurationValues__wrappee__Bench();
 	}
 
 	
-	 private static void  displayConfigurationValues__wrappee__Weighted  () {
-		configuration.append("WEIGHTED ");
-		displayConfigurationValues__wrappee__Undirected();
-	}
-
-	
-	 private static void  displayConfigurationValues__wrappee__BFS  () {
-		configuration.append("BFS ");
-		displayConfigurationValues__wrappee__Weighted();
+	 private static void  displayConfigurationValues__wrappee__Cycle  () {
+		configuration.append("CYCLE ");
+		displayConfigurationValues__wrappee__DFS();
 	}
 
 	
 	private static void displayConfigurationValues() {
-		configuration.append("MSTPRIM ");
-		displayConfigurationValues__wrappee__BFS();
+		configuration.append("DIRECTED ");
+		displayConfigurationValues__wrappee__Cycle();
 	}
 
 
