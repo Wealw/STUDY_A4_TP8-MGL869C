@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
 	<properties>
-		<calculations key="tautology" value="true"/>
-		<calculations key="auto" value="true"/>
 		<graphics key="autolayoutconstraints" value="false"/>
 		<graphics key="legendautolayout" value="true"/>
-		<calculations key="redundant" value="true"/>
 		<graphics key="showshortnames" value="false"/>
 		<graphics key="layout" value="horizontal"/>
 		<graphics key="showcollapsedconstraints" value="true"/>
 		<graphics key="legendhidden" value="false"/>
-		<calculations key="constraints" value="true"/>
 		<graphics key="layoutalgorithm" value="1"/>
-		<calculations key="features" value="true"/>
 	</properties>
 	<struct>
 		<and abstract="true" mandatory="true" name="GPLAntennav31">
@@ -123,4 +118,23 @@
 			</imp>
 		</rule>
 	</constraints>
+	<featureOrder userDefined="true">
+		<feature name="Cycle"/>
+		<feature name="Prog"/>
+		<feature name="Bench"/>
+		<feature name="Weighted"/>
+		<feature name="Search"/>
+		<feature name="DFS"/>
+		<feature name="BFS"/>
+		<feature name="Algorithms"/>
+		<feature name="Number"/>
+		<feature name="Connected"/>
+		<feature name="StronglyConnected"/>
+		<feature name="MSTPrim"/>
+		<feature name="MSTKruskal"/>
+		<feature name="Shortestpath"/>
+		<feature name="Graph"/>
+		<feature name="Directed"/>
+		<feature name="Undirected"/>
+	</featureOrder>
 </featureModel>

@@ -44,7 +44,7 @@ public   class  Vertex {
 	 // weight so far from s to it
 	
 	public void display  () {
-    	System.out.print( "Pred " + predecessor + " DWeight " + dweight + " " );
+    	System.out.print( " Pred " + pred + " Key " + key + " " );
         System.out.println();
 	}
 
@@ -100,13 +100,10 @@ public   class  Vertex {
     }
 
 	
-    public int VertexNumber;
+    public String pred;
 
-	
-    public String predecessor;
-
-	 // the name of the predecessor if any
-    public int dweight;
+	 // the predecessor vertex if any
+    public int key;
 
 
 }

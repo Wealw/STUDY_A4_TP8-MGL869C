@@ -113,15 +113,15 @@ public   class  Main {
 	}
 
 	
-	 private static void  displayConfigurationValues__wrappee__Directed  () {
-		configuration.append("DIRECTED ");
+	 private static void  displayConfigurationValues__wrappee__Undirected  () {
+		configuration.append("UNDIRECTED ");
 		displayConfigurationValues__wrappee__Bench();
 	}
 
 	
 	 private static void  displayConfigurationValues__wrappee__Weighted  () {
 		configuration.append("WEIGHTED ");
-		displayConfigurationValues__wrappee__Directed();
+		displayConfigurationValues__wrappee__Undirected();
 	}
 
 	
@@ -132,7 +132,7 @@ public   class  Main {
 
 	
 	private static void displayConfigurationValues() {
-		configuration.append("SHORTESTPATH ");
+		configuration.append("MSTPRIM ");
 		displayConfigurationValues__wrappee__BFS();
 	}
 
