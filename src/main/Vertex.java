@@ -45,6 +45,22 @@ public   class  Vertex {
     }
 
 	
+    public int VertexCycle;
+
+	
+    public int VertexColor;
+
+	
+	public void display  () {
+		System.out.print( " Node " + name + " connected to: " );
+        for (Neighbor theNeighbor : neighbors) {
+            Vertex v = theNeighbor.end;
+            System.out.print( v.name + ", " );
+        }
+        System.out.println();
+	}
+
+	
 	public boolean visited;
 
 	
@@ -77,22 +93,6 @@ public   class  Vertex {
         // Step 3: do postVisitAction now
         w.postVisitAction(this);
     }
-
-	
-    public int VertexCycle;
-
-	
-    public int VertexColor;
-
-	
-	public void display  () {
-		System.out.print( " Node " + name + " connected to: " );
-        for (Neighbor theNeighbor : neighbors) {
-            Vertex v = theNeighbor.end;
-            System.out.print( v.name + ", " );
-        }
-        System.out.println();
-	}
 
 
 }

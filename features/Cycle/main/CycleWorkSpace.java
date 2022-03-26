@@ -11,6 +11,7 @@ public class CycleWorkSpace extends WorkSpace {
 
 	   public boolean anyCycles;
 	    public int     counter;
+	    private boolean _DIRECTED;
 	      
 	    public static final int WHITE = 0;
 	    public static final int GRAY  = 1;
@@ -19,6 +20,10 @@ public class CycleWorkSpace extends WorkSpace {
 	    public CycleWorkSpace() {
 	        anyCycles = false;
 	        counter   = 0;
+	    }
+	    
+	    public void setDirected(boolean isDirected) {
+	        _DIRECTED = isDirected;
 	    }
 
 	    public void init_vertex( Vertex v ) {
@@ -42,11 +47,20 @@ public class CycleWorkSpace extends WorkSpace {
 	    } // of postVisitAction
 
 	    public void checkNeighborAction(Vertex vsource, Vertex vtarget ) {
-	    	aux_checkNeighborAction(vsource.VertexColor,vtarget.VertexColor,vsource.VertexCycle,vtarget.VertexCycle);
+	    	if(_DIRECTED) {
+		    	aux_directed_checkNeighborAction(vsource.VertexColor,vtarget.VertexColor,vsource.VertexCycle,vtarget.VertexCycle);
+	    	} else {
+		    	aux_undirected_checkNeighborAction(vsource.VertexColor,vtarget.VertexColor,vsource.VertexCycle,vtarget.VertexCycle);
+	    	}
 	    } // of checkNeighborAction
 	    
-	    public void aux_checkNeighborAction(int sourceColor, int targetColor, int sourceCycle, int targetCycle) {
-
+	    public void aux_directed_checkNeighborAction(int sourceColor, int targetColor, int sourceCycle, int targetCycle) {
+	    	if (sourceColor==GRAY && targetColor==GRAY) anyCycles = true;
+	    }
+	    
+	    public void aux_undirected_checkNeighborAction(int sourceColor, int targetColor, int sourceCycle, int targetCycle) {
+	        if (sourceColor==GRAY && targetColor==GRAY && sourceCycle!=(targetCycle+1)) 
+	            anyCycles = true;
 	    }
 
 } // of CycleWorkSpace

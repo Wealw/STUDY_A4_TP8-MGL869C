@@ -103,21 +103,21 @@ public   class  Main {
 	}
 
 	
-	 private static void  displayConfigurationValues__wrappee__DFS  () {
-		configuration.append("DFS ");
+	 private static void  displayConfigurationValues__wrappee__Cycle  () {
+		configuration.append("CYCLE ");
 		displayConfigurationValues__wrappee__Bench();
 	}
 
 	
-	 private static void  displayConfigurationValues__wrappee__Cycle  () {
-		configuration.append("CYCLE ");
-		displayConfigurationValues__wrappee__DFS();
+	 private static void  displayConfigurationValues__wrappee__DFS  () {
+		configuration.append("DFS ");
+		displayConfigurationValues__wrappee__Cycle();
 	}
 
 	
 	private static void displayConfigurationValues() {
 		configuration.append("DIRECTED ");
-		displayConfigurationValues__wrappee__Cycle();
+		displayConfigurationValues__wrappee__DFS();
 	}
 
 

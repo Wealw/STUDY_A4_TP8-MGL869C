@@ -13,12 +13,6 @@
 		<and abstract="true" mandatory="true" name="GPLAntennav31">
 			<feature mandatory="true" name="Prog"/>
 			<feature mandatory="true" name="Bench"/>
-			<feature name="Weighted"/>
-			<alt name="Search">
-				<graphics key="collapsed" value="false"/>
-				<feature name="DFS"/>
-				<feature name="BFS"/>
-			</alt>
 			<or mandatory="true" name="Algorithms">
 				<graphics key="collapsed" value="false"/>
 				<feature name="Number"/>
@@ -29,6 +23,12 @@
 				<feature name="MSTKruskal"/>
 				<feature name="Shortestpath"/>
 			</or>
+			<feature name="Weighted"/>
+			<alt name="Search">
+				<graphics key="collapsed" value="false"/>
+				<feature name="DFS"/>
+				<feature name="BFS"/>
+			</alt>
 			<alt mandatory="true" name="Graph">
 				<graphics key="collapsed" value="false"/>
 				<feature name="Directed"/>
@@ -121,10 +121,6 @@
 	<featureOrder userDefined="true">
 		<feature name="Prog"/>
 		<feature name="Bench"/>
-		<feature name="Weighted"/>
-		<feature name="Search"/>
-		<feature name="DFS"/>
-		<feature name="BFS"/>
 		<feature name="Algorithms"/>
 		<feature name="Number"/>
 		<feature name="Connected"/>
@@ -133,6 +129,10 @@
 		<feature name="MSTPrim"/>
 		<feature name="MSTKruskal"/>
 		<feature name="Shortestpath"/>
+		<feature name="Weighted"/>
+		<feature name="Search"/>
+		<feature name="DFS"/>
+		<feature name="BFS"/>
 		<feature name="Graph"/>
 		<feature name="Directed"/>
 		<feature name="Undirected"/>

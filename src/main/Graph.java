@@ -4,8 +4,9 @@ import java.util.LinkedList;
 
 import java.io.IOException; 
 import java.io.Reader; 
-import java.io.*; 
-
+import java.io.*; /**
+ * TODO description
+ */
 public   class  Graph {
 	
 
@@ -26,7 +27,6 @@ public   class  Graph {
     	
     }
 
-	
 	
     /**
      * Method that executes the selected algorithms on the a starting vertex.
@@ -236,6 +236,24 @@ public   class  Graph {
     }
 
 	
+	public boolean directed  ;
+
+	
+	
+	public void setDirected  (){
+		directed = true;
+	}
+
+	
+	
+    public boolean CycleCheck() {
+        CycleWorkSpace c = new CycleWorkSpace();
+        c.setDirected(directed);
+        GraphSearch( c );
+        return c.anyCycles;
+    }
+
+	
     /**
      * Performs a search on the graph, either in BFS or DFS mode.
      * @param w
@@ -265,14 +283,6 @@ public   class  Graph {
             	v.dftNodeSearch( w );
             }
         } 
-    }
-
-	
-	
-    public boolean CycleCheck() {
-        CycleWorkSpace c = new CycleWorkSpace();
-        GraphSearch( c );
-        return c.anyCycles;
     }
 
 

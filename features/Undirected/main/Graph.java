@@ -1,6 +1,13 @@
 package main;
 
 public class Graph {
+	
+	public boolean directed;
+	
+	public void setDirected(){
+		directed = false;
+	}
+	
     /**
      * Adds an edge based from
      * @param the_edge
